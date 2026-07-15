@@ -49,7 +49,7 @@ dependencies {
 
     // The Nova Quarkus extension (colloquial, locally published). Exposes
     // NotificationFacade as a @Singleton CDI bean.
-    implementation("pe.edu.nova.java.starters:nova-notifications-quarkus-extension:1.1.1")
+    implementation("pe.edu.nova.java.starters:nova-notifications-quarkus-extension:1.1.2")
 
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("org.assertj:assertj-core:3.26.3")
