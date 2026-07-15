@@ -4,8 +4,36 @@ plugins {
 }
 
 repositories {
-    mavenCentral()
     mavenLocal()
+    mavenCentral()
+    // GitHub Packages of the Quarkus extension (cross-repo dependency).
+    // Same rationale as demo-notifications-spring-boot/build.gradle.kts:9-30.
+    maven {
+        name = "GitHubPackages-NovaNotifications-Quarkus"
+        url = uri("https://maven.pkg.github.com/ahincho/nova-java-notifications-quarkus-extension")
+        val token = System.getenv("NOVA_PACKAGES_READ_TOKEN")
+            ?: System.getenv("NOVA_RELEASE_PAT")
+            ?: System.getenv("GITHUB_TOKEN")
+        if (!token.isNullOrBlank()) {
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") ?: "x-access-token"
+                password = token
+            }
+        }
+    }
+    maven {
+        name = "GitHubPackages-NovaNotifications-Core"
+        url = uri("https://maven.pkg.github.com/ahincho/nova-java-notifications")
+        val token = System.getenv("NOVA_PACKAGES_READ_TOKEN")
+            ?: System.getenv("NOVA_RELEASE_PAT")
+            ?: System.getenv("GITHUB_TOKEN")
+        if (!token.isNullOrBlank()) {
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") ?: "x-access-token"
+                password = token
+            }
+        }
+    }
 }
 
 val quarkusPlatformGroupId: String by project
