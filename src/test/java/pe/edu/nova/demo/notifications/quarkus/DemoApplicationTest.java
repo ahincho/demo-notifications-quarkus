@@ -2,7 +2,6 @@ package pe.edu.nova.demo.notifications.quarkus;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import pe.edu.nova.java.libs.notifications.application.facade.NotificationFacade;
