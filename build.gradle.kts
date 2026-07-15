@@ -78,3 +78,8 @@ tasks.test {
 tasks.withType<GenerateModuleMetadata>().configureEach {
     suppressedValidationErrors.add("enforced-platform")
 }
+
+checkstyle {
+    toolVersion = "10.20.1"
+    configFile = file("config/checkstyle/checkstyle.xml")
+}
