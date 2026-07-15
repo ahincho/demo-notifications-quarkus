@@ -23,6 +23,7 @@ dependencies {
     implementation("pe.edu.nova.java.starters:nova-notifications-quarkus-extension:1.0.0")
 
     testImplementation("io.quarkus:quarkus-junit5")
+    testImplementation("org.assertj:assertj-core:3.26.3")
     testImplementation("io.rest-assured:rest-assured")
 }
 
