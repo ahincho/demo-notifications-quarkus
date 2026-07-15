@@ -1,0 +1,31 @@
+# .dockerignore for demo-notifications-quarkus
+# Excludes everything that is not needed for the Docker build context.
+
+# VCS
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.iml
+*.iws
+
+# Gradle local state and build output (the build runs INSIDE the container)
+.gradle
+build
+out
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*~
+
+# Nova documentation (kept in repo, not needed in image)
+AI-ATTRIBUTION.md
+
+# Docker self-reference (the Dockerfile is read by the daemon, not copied)
+Dockerfile
+.dockerignore
